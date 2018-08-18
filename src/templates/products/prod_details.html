@@ -1,0 +1,28 @@
+{% extends "../base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    
+    <div class="grid-container fluid" id="prod-back">
+        <div class="grid-x grid-margin-x">
+            <div class="product-details column medium-6 center-text-for-small-only">
+                <h1>{{ prod.title }}</h1>
+                <img src="{{ prod.image.url }}" alt="sweet foundation shirt" style=" width: auto;" />
+                <p class="product-description">{{ prod.description }}</p>
+                <div class="product-details-add-to-cart">
+                    <p><span class="in-stock">In Stock</span> <span class="dim-text">(Only 3 left in Stock)</span></p>
+                    <hr>
+                    <p class="price">{{ prod.price }}</p>
+                    <p> <span>Qty:</span>
+                        <input class="qty" type="number" value="1"> </p>
+                    <button class="button expanded">Add to Cart</button>
+                </div>
+                <p class="shipping">Available for Free Ground Shipping &amp; Return</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+

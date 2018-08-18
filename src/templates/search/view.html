@@ -1,0 +1,41 @@
+{% extends "../base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <h3>Searched For {{ request.GET.q }}</h3>
+
+<div class="grid-container">
+    <div class="grid-x grid-margin-x">
+            <span class="medium-12 cell">
+                    <span class="grid-x grid-padding-x">
+                        {% for prod in object_list %}
+                        <span class="medium-4 cell">
+                            <span class="card card-product-hover">
+                                <img src="{{ prod.image.url }}" alt="sweet foundation shirt" style="height: 270px; width: auto;" />
+                                <!-- <div class="card-product-hover-icons">
+                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a href="#"><i class="fa fa-thermometer-full"></i></a>
+                                    <a href="#"><i class="fa fa-share-alt"></i></a>
+                                </div> -->
+                                <span class="card-product-hover-details">
+                                    <p><span class="badge-pp">
+                                        <a class="badge-pp-prod" href="{% url 'product_detail_view' pk=prod.pk %}">{{ prod.title }} </a> /
+                                        <span><a href="" class="badge-pp-cate"> {{ prod.categ }}</a></span>
+                                        </span>
+                                    </p>
+                                    <span class="card-product-hover-price">{{ prod.price }}</span>
+                                    <a href="#" class="snip1562">ADD TO CART</a>
+                                </span>
+                            </span>
+                        </span>
+                        {% endfor %}
+                    </span>
+                            </span>
+    </div>
+</div>
+
+        <!-- </span>
+    </span> -->
+{% endblock content %}
+

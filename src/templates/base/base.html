@@ -1,0 +1,88 @@
+<!doctype html> {% load staticfiles %}
+<html class="no-js" lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPPINGKART</title>
+    {% include "./css.html" %}
+
+</head>
+
+<body>
+    {% include "./navbar.html" %} {% block content %} {% endblock content %}
+
+    <!-- checkout-modal -->
+    <div class="checkout-summary reveal" id="checkoutModal" data-reveal>
+        <div class="checkout-summary-title">
+            <h5>Your Order</h5>
+            <h5>2 Items</h5>
+        </div>
+        <div class="checkout-summary-item">
+            <img src="https://placeimg.com/100/80/any">
+            <div class="item-name">
+                <a>Comfy Knit Blazer</a>
+                <p>
+                    <span class="title">Color: </span>Blue</p>
+                <p>
+                    <span class="title">Size: </span>M</p>
+            </div>
+            <div class="item-price">
+                <p class="title">$24.99</p>
+                <a href="#">Remove</a>
+            </div>
+        </div>
+        <div class="checkout-summary-item">
+            <img src="https://placeimg.com/100/80/any">
+            <div class="item-name">
+                <a>Comfy Knit Blazer</a>
+                <p>
+                    <span class="title">Color: </span>Blue</p>
+                <p>
+                    <span class="title">Size: </span>M</p>
+            </div>
+            <div class="item-price">
+                <p class="title">$24.99</p>
+                <a href="#">Remove</a>
+            </div>
+        </div>
+        <div class="checkout-summary-details">
+            <div class="left">
+                <p>
+                    <strong>Subtotal:</strong>
+                </p>
+                <p>
+                    <strong>Tax:</strong>
+                </p>
+                <p>
+                    <strong>Total:</strong>
+                </p>
+            </div>
+            <div class="right">
+                <p>$10.99</p>
+                <p>$2.00</p>
+                <p>$12.99</p>
+            </div>
+        </div>
+        <button class="button expanded">Continue Shopping</button>
+        <a href="checkout.html" class="button expanded">Proceed to checkout</a>
+    </div>
+
+
+    <!-- search -->
+    <div class="reveal" id="searchmodal" data-reveal>
+        <form method="GET" action="{% url 'query' %}">
+            <div class="input-group input-group-rounded">
+                <input class="input-group-field" name="q" type="search">
+                <div class="input-group-button">
+                    <input type="submit" class="button secondary" value="Search">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% include "./js.html" %}
+</body>
+
+</html>

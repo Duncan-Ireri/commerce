@@ -1,0 +1,100 @@
+{% extends "../base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="promo-hero promo-hero-bg-image">
+    <div class="promo-hero-content">
+        <h1 class="promo-hero-title">{{ hero }}</h1>
+        <p class="promo-hero-description hide-for-small-only">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor ante, varius eget lacinia porta, faucibus ut
+            eros. Donec quis dui id felis pharetra fermentum.</p>
+        <div class="promo-hero-ctas">
+            <a href="#" class="promo-section-cta button primary">Shop Now</a>
+            <a href="#" class="promo-section-cta button white-hollow">Learn More</a>
+        </div>
+    </div>
+</div>
+
+{% include "../base/sidebar.html" %}
+
+<span class="medium-9 cell">
+    <span class="grid-x grid-padding-x">
+        {% for prod in qs %}
+        <span class="medium-4 cell">
+            <span class="card card-product-hover">
+                <img src="{{ prod.image.url }}" alt="sweet foundation shirt" style="height: 270px; width: auto;" />
+                <!-- <div class="card-product-hover-icons">
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fa fa-thermometer-full"></i></a>
+                    <a href="#"><i class="fa fa-share-alt"></i></a>
+                </div> -->
+                <span class="card-product-hover-details">
+                    <p><span class="badge-pp">
+                        <a class="badge-pp-prod" href="{% url 'product_detail_view' pk=prod.pk %}">{{ prod.title }} </a> /
+                        <span><a href="" class="badge-pp-cate"> {{ prod.categ }}</a></span>
+                        </span>
+                    </p>
+                    <span class="card-product-hover-price">{{ prod.price }}</span>
+                    <a href="#" class="snip1562">ADD TO CART</a>
+                </span>
+            </span>
+        </span>
+        {% endfor %}
+    </span>
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+        <ul class="orbit-container">
+            <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+            <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+            <li class="is-active orbit-slide">
+                <img class="orbit-image" src="https://placehold.it/2000x750&text=1st" alt="Space">
+                <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+            </li>
+            <li class="orbit-slide">
+                <img class="orbit-image" src="https://placehold.it/2000x750&text=2nd" alt="Space">
+                <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+            </li>
+            <li class="orbit-slide">
+                <img class="orbit-image" src="https://placehold.it/2000x750&text=3nd" alt="Space">
+                <figcaption class="orbit-caption">Encapsulating</figcaption>
+            </li>
+            <li class="orbit-slide">
+                <img class="orbit-image" src="https://placehold.it/2000x750&text=4nd" alt="Space">
+                <figcaption class="orbit-caption">Outta This World</figcaption>
+            </li>
+        </ul>
+        <nav class="orbit-bullets">
+            <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+            <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+            <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+            <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+        </nav>
+    </div>
+
+
+                <div class="grid-x grid-margin-x">
+                    <div class="marketing-site-content-section">
+                        <div class="marketing-site-content-section-img">
+                            <img src="img/pexels-photo-264636.jpeg" alt="" />
+                        </div>
+                        <div class="marketing-site-content-section-block">
+                            <h3 class="marketing-site-content-section-block-header">Yeti Snowcone Agency</h3>
+                            <p class="marketing-site-content-section-block-subheader subheader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam omnis, maxime libero natus qui minus!</p>
+                            <a href="#" class="round button small">learn more</a>
+                        </div>
+                        <div class="marketing-site-content-section-block small-order-2 medium-order-1">
+                            <h3 class="marketing-site-content-section-block-header">Yeti Snowcone Agency</h3>
+                            <p class="marketing-site-content-section-block-subheader subheader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam omnis, maxime libero natus qui minus!</p>
+                            <a href="#" class="round button small">learn more</a>
+                        </div>
+                        <div class="marketing-site-content-section-img small-order-1 medium-order-2">
+                            <img src="img/pexels-photo-64613.jpeg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </span>
+    </span>
+{% endblock content %}
+
