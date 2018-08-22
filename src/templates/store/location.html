@@ -1,0 +1,30 @@
+{% extends "../base/base.html" %} 
+
+{% load static %} 
+
+{% block content %}
+
+
+
+<p> {{ stores }} </p>
+<p id="dr"></p>
+
+<script>
+	var myDjangoList = (("{{stores |escapejs}}").replace(/&(l|g|quo)t;/g, function(a,b){
+            return {
+                l   : '<',
+                g   : '>',
+                quo : '"'
+            }[b];
+        }));
+
+myDjangoList = myDjangoList.replace(/u'/g, '\'')
+myDjangoList = myDjangoList.replace(/'/g, '\"')
+
+myData = JSON.parse( myDjangoList );
+
+var dr = document.getElementById('dr');
+dr.innerHTML = myData;
+</script>
+
+{% endblock content %}

@@ -6,7 +6,7 @@
     </button>
     <ul class="vertical menu">
         <li class="main-nav-link">
-            <a href="{% url 'category_list' %}">Aisles</a>
+            <a href="{% url 'category_list' %}">Isles</a>
         </li>
         <li class="main-nav-link">
             <a href="#">Category 2</a>
@@ -81,7 +81,7 @@
                         <a href="{% url 'product_list' %}">Home</a>
                     </li>
                     <li class="main-nav-link">
-                        <a href="{% url 'category_list' %}">Aisles</a>
+                        <a href="{% url 'category_list' %}">Isles</a>
                     </li>
                     <li class="main-nav-link">
                         <a href="">Items</a>
@@ -107,8 +107,8 @@
     <div class="ecommerce-header-mobile hide-for-large">
         <div class="ecommerce-header-mobile-left">
             <button class="menu-icon" type="button" data-toggle="ecommerce-header"></button>
-            <form class="ecommerce-header-search-exandable">
-                <input type="search" placeholder="Search">
+            <form class="ecommerce-header-search-exandable" method="GET" action="{% url 'query' %}">
+                <input type="search" placeholder="Search" name="q">
             </form>
         </div>
         <div class="ecommerce-header-mobile-center">

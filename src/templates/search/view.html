@@ -3,7 +3,13 @@
 {% load static %}
 
 {% block content %}
-    <h3>Searched For {{ request.GET.q }}</h3>
+<div class="grid-container">
+    <div class="grid-x grid-margin-x">
+        <div class="medium-12 cell">
+            <h3>Searched For {{ request.GET.q }}</h3>
+        </div>
+    </div>
+</div>
 
 <div class="grid-container">
     <div class="grid-x grid-margin-x">

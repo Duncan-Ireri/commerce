@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import SuperName, SuperSize, SuperSub
+
+
+admin.site.register(SuperName)
+admin.site.register(SuperSize)
+admin.site.register(SuperSub)

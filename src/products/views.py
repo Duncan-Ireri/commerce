@@ -1,15 +1,20 @@
+import random
 from django.http import Http404
 from django.views.generic import DetailView
 from django.shortcuts import render, get_object_or_404
+# from .filters import ProductFilter
 
 from .models import Product
+from categories.models import Categories
 
 # Create your views here.
 def product_list(request):
-	queryset = Product.objects.all()
+	queryset = Product.objects.order_by('?')[:5]
+	# special = Product.objects.filter(cate_name__icontains ="food")
 	context ={
 		"hero":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, nihil ipsa. Nisi.",
 		"qs": queryset,
+		# "specs" : special,
 	}
 	return render(request, "products/index.html", context)
 
@@ -51,3 +56,15 @@ def product_detail_view(request, pk=None, *args, **kwargs):
 
 # 		return instance
 
+# def search(request):
+
+#     product_list = Product.objects.all()[:10]
+# 	rand_list = random.shuffle(product_list)
+#     product_filter = ProductFilter(request.GET, queryset=product_list)
+#     return render(request, 'products/product_list.html', {'filter': product_filter})
+
+# def search(request):
+# 	product_list = Product.objects.all()
+# 	# rand_list = random.shuffle(product_list)
+# 	product_filter = ProductFilter(request.GET, queryset=product_list)
+# 	return render(request, "products/product_list.html", {"filter":product_filter})
